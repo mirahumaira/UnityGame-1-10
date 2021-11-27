@@ -38,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
         // More efficient method.
         //rb.AddForce(Input.GetAxis("Horizontal") * 200 * Time.deltaTime, 0, 0);
+
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 }
 
